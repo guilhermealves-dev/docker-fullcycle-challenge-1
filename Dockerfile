@@ -1,11 +1,19 @@
-# Imagem base oficial do Go
-FROM golang:alpine
+# Stage 1: Build
+FROM golang:alpine AS build
 
-# Define o diretório de trabalho
 WORKDIR /app
 
-# Copia o executável gerado para o diretório de trabalho no container
-COPY app /app
+COPY . .
 
-# Comando a ser executado quando o container for iniciado
-CMD ["/app/app"]
+# Adicione quaisquer comandos adicionais necessários para compilar seu aplicativo
+RUN go build -ldflags="-s -w" -o app
+
+# Stage 2: Imagem mínima
+FROM scratch
+
+WORKDIR /app
+
+COPY --from=build /app/app .
+
+CMD ["./app"]
+
