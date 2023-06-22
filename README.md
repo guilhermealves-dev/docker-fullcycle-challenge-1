@@ -2,6 +2,12 @@
 
 Este é um projeto simples em Go que imprime a mensagem "Full Cycle Rocks!!".
 
+## Imagem Docker
+
+A imagem Docker para este projeto foi publicada no Docker Hub e pode ser acessada através do seguinte repositório:
+
+[https://hub.docker.com/repository/docker/guialvesdev/fullcycle/](https://hub.docker.com/repository/docker/guialvesdev/fullcycle/)
+
 ## Executando o projeto
 
 Para executar o projeto, siga as etapas abaixo:
