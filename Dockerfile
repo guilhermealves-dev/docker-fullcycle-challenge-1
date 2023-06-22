@@ -5,10 +5,9 @@ WORKDIR /app
 
 COPY . .
 
-# Adicione quaisquer comandos adicionais necessários para compilar seu aplicativo
 RUN go build -ldflags="-s -w" -o app
 
-# Stage 2: Imagem mínima
+# Stage 2: Imagem minima
 FROM scratch
 
 WORKDIR /app
